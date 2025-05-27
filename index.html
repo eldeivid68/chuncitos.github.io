@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Inicio</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Josefin Sans', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #e5f1f7;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        /* Barra de envío gratis */
+        .shipping-bar {
+            background-color: white;
+            color: #FFF8E7;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .logo-header {
+            height: 60px;
+            width: auto;
+            max-width: 100%;
+        }
+        
+        /* Barra de navegación */
+        nav {
+            background-color: #193f60;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #D8AF3C;
+            color: white;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            color: white;
+            background-color: #193f60;
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+            position: relative;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        .nav-item:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #D8AF3C;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-item:hover:after {
+            width: 100%;
+        }
+        
+        .new-badge {
+            background-color: #2a517a;
+            color: white;
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 10px;
+            position: absolute;
+            top: -10px;
+            right: -15px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        /* Hero section */
+        .hero {
+            background-color: #193f60;
+            text-align: center;
+            padding: 30px 20px;
+            margin: 20px 0;
+        }
+        
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #D8AF3C;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Sección de información */
+        .info-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .info-section h2 {
+            color: #000000;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        .info-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            line-height: 1.6;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        .info-content h2 {
+            color: #000000;
+            margin: 20px 0 15px;
+        }
+        
+        .info-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Footer modificado */
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            margin-top: auto;
+            font-family: 'Josefin Sans', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-text {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        /* Card de redes sociales modificado */
+        .social-card {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .socialContainer {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+            transition-duration: 0.3s;
+        }
+        
+          /* for all social containers*/
+        .socialContainer {
+          width: 52px;
+          height: 52px;
+          background-color: rgb(44, 44, 44);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          transition-duration: 0.3s;
+        }
+        /* instagram*/
+        .containerOne:hover {
+          background-color: #d62976;
+          transition-duration: 0.3s;
+          transform: scale(1.5);
+          border-radius: 15px;
+        }
+        /* twitter*/
+        .containerTwo:hover {
+          background-color: #00acee;
+          transition-duration: 0.3s;
+          transform: scale(1.5);
+          border-radius: 15px;
+        }
+        /* Whatsapp*/
+        .containerFour:hover {
+          background-color: #25d366;
+          transition-duration: 0.3s;
+          transform: scale(1.5);
+          border-radius: 15px;
+        }
+        /*facebook*/
+        .containerFive:hover {
+          background-color: #2753a7;
+          transition-duration: 0.3s;
+          transform: scale(1.5);
+          border-radius: 15px;
+        }
+        .soci
+        .socialContainer:hover .socialSvg {
+            animation: slide-in-top 0.3s both;
+        }
+        .socialContainer:active {
+          transform: scale(0.9);
+          transition-duration: 0.3s;
+        }
+
+        
+        .socialSvg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .socialSvg path {
+            fill: rgb(255, 255, 255);
+        }
+        
+        /* Slider styles modificados */
+        .slider-container {
+            background-color: #193f60;
+            text-align: center;
+            padding: 0px;
+            margin: 100px 0;
+            position: relative;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 400px;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .slider {
+            display: flex;
+            width: 50rem;
+            height: 400px;
+            position: relative;
+            border: 3px solid #D8AF3C;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 0 auto;
+            border-color: #193f60;
+        }
+        
+        .slider-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .slide {
+            min-width: 100%;
+            min-height: 100%;
+            position: relative;
+            margin-bottom: 1000px;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: flexive;
+            background: #193f60;
+            padding: 10px;
+        }
+        
+        /* Indicadores */
+        .slider-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background: #D8AF3C;
+        }
+        
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-item {
+                margin: 10px 0;
+            }
+            
+            .logo-header {
+                height: 50px;
+            }
+            
+            .info-section {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+            
+            .info-content {
+                padding: 20px;
+            }
+            
+            .slider {
+                height: 5000rem;
+                width: 100rem;
+            }
+            
+            .slide img {
+                padding: 5px;
+
+            }
+            
+            footer {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .social-card {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de envío gratis -->
+    <div class="shipping-bar">
+        <img src="img/logo1.png" alt="Logo de la tienda" class="logo-header">
+    </div>
+    
+    <!-- Barra de navegación -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-item">Inicio</a>
+            <a href="procesos.html" class="nav-item">Procesos</a>
+            <a href="acerca.html" class="nav-item">Acerca de nosotros</a>
+            <a href="sellos.html" class="nav-item">
+                Sellos
+                <span class="new-badge">New</span>
+            </a>
+            <a href="ubicacion.html" class="nav-item">Ubicación</a>
+        </div>
+    </nav>
+    
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slider-track">
+                    <div class="slide">
+                        <img src="img/sello 1.jpeg" alt="Imagen de sello 1">
+                    </div>
+                    <div class="slide">
+                        <img src="img/sello 2.jpeg" alt="Imagen de sello 2">
+                    </div>
+                    <div class="slide">
+                        <img src="img/sello 3.jpeg" alt="Imagen de sello 3">
+                    </div>
+                </div>
+                
+                <div class="slider-indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección de información -->
+        <div class="info-section">
+            <h2>Informacion</h2>
+            <div class="info-content">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <img src="img/sellos.jpeg" alt="Descripción" style="height: 500px;">
+                    <p> Chunchitos es una microempresa guatemalteca dedicada a la venta de miscelánea y materiales para graduandos, con un enfoque principal en sellos adhesivos en colores dorado y plateado, que incluyen gofrado del Escudo Nacional. Estos productos son ampliamente utilizados en diplomas y certificados académicos. 
+
+                    La empresa fue creada como una iniciativa para generar ingresos adicionales, aprovechando materiales y equipos disponibles, con el objetivo de ofrecer soluciones accesibles y de calidad a sus clientes. Su público objetivo principal incluye academias, escuelas, universidades y docentes encargados de emitir certificaciones, aunque también busca llegar a otros emprendedores que puedan utilizar sus productos.
+
+                    Chunchitos se distingue por valores como la calidad, precios justos y puntualidad en el servicio. Su principal competencia son librerías locales y papelerías, pero la marca busca posicionarse como superior en el mercado, destacando por su accesibilidad, calidad consistente y confiabilidad. 
+
+                    Aunque aún no cuenta con sitio web, tiene presencia en redes sociales como Facebook e Instagram bajo los nombres "Ioschunchitos" y "chunchecitos". Su mensaje central es ser reconocida como la "marca líder por excelencia" en su nicho.</p>
+                </div>
+            </div>
+            <br> 
+            <br> 
+            <br> 
+            <div class="info-content">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <p>Además, Chunchitos busca satisfacer las necesidades de su público objetivo ofreciendo productos duraderos, con un diseño atractivo y funcional, que cumplan con las expectativas de instituciones educativas y profesionales. La empresa se enfoca en mantener altos estándares de calidad, diferenciándose de la competencia por su atención al detalle y su compromiso con la excelencia. Con un enfoque en la confianza y la reputación, Chunchitos aspira a consolidarse como una opción preferida en el mercado, reforzando su imagen como una marca cercana, confiable y especializada en soluciones para ceremonias académicas y eventos formales. Su crecimiento estratégico incluye potencialmente la expansión de su línea de productos y el fortalecimiento de su presencia digital para llegar a más clientes.</p>
+                  <img src="img/+sellos.jpeg" alt="Descripción" style="height: 400px;">
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer modificado -->
+    <footer>
+        <div class="footer-text">
+            <p>&copy; 2025 Tienda de Sellos. Todos los derechos reservados.</p>
+        </div>
+        
+        <div class="social-card">
+            <a href="https://www.instagram.com/chunchecitos?igsh=MW5zazE1NDdtbXR6dQ==" class="socialContainer containerOne">
+                <svg class="socialSvg" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+                </svg>
+            </a>
+
+            <a href="#" class="socialContainer containerTwo">
+                <svg class="socialSvg" viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+                </svg>
+            </a>
+
+
+            <a href="https://api.whatsapp.com/send?phone=50256229027&sfnsn=wa" class="socialContainer containerFour">
+                <svg class="socialSvg" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/share/1apwNbK9XD/" class="socialContainer containerFive">
+                <svg class="socialSvg" viewBox="0 0 16 16">
+                 <path d="M16.75,9H13.5V7a1,1,0,0,1,1-1h2V3H14a4,4,0,0,0-4,4V9H8v3h2v9h3.5V12H16Z"></path>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.slider-track');
+            const slides = Array.from(document.querySelectorAll('.slide'));
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            let slideInterval;
+            
+            function goToSlide(index) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                currentIndex = index;
+                
+                // Actualizar indicadores
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle('active', i === index);
+                });
+            }
+            
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                goToSlide(currentIndex);
+            }
+            
+            // Iniciar auto-slider
+            function startSlider() {
+                slideInterval = setInterval(nextSlide, 3500); // Cambia cada 3 segundos
+            }
+            
+            // Pausar auto-slider cuando el mouse está sobre el slider
+            document.querySelector('.slider').addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            // Reanudar auto-slider cuando el mouse sale del slider
+            document.querySelector('.slider').addEventListener('mouseleave', startSlider);
+            
+            // Event listeners para los indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    goToSlide(index);
+                    startSlider();
+                });
+            });
+            
+            // Iniciar en la primera slide y comenzar el auto-slider
+            goToSlide(0);
+            startSlider();
+        });
+    </script>
+</body>
+</html>
